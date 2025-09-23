@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Equipo 1 - Los Indestructibles</title>
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Icono para navegadores legacy -->
+  <link rel="icon" href="/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+  <meta name="theme-color" content="#0b74de"/>
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <!-- Aquí cambié el logo SVG por tu PNG -->
+    <img src="/icons/icon-192.png" alt="Logo Los Dexters" width="80" />
+    <h1>Equipo 1 - Los Indestructibles</h1>
+    <p>PWA</p>
+  </header>
+
+  <main>
+    <section id="integrantes">
+      <h2>Integrantes</h2>
+      <ul>
+        <li>Missael Pérez Barajas</li>
+        <li>Jessica Angeles Redendiz Arroyo </li>
+        <li>Angel Yael Mendez Romero</li>
+        <li>Marco Antonio Torres Lopez</li>
+        <li>Esther Alejo Cedillo</li>
+        <li>Antonio de Jesus Ortiz Hernandez</li>
+      </ul>
+    </section>
+
+    <section id="estado">
+      <h2>Estado de la app</h2>
+      <p id="status">Cargando...</p>
+      <button id="checkCache">Verificar caché</button>
+      <pre id="cacheOutput"></pre>
+    </section>
+  </main>
+
+  <script src="/sw-register.js"></script>
+  <script>
+    document.getElementById('status').textContent = 'PWA INSTALABLE';
+    document.getElementById('checkCache').onclick = async () => {
+      if ('caches' in window) {
+        const keys = await caches.keys();
+        document.getElementById('cacheOutput').textContent = JSON.stringify(keys, null, 2);
+      } else {
+        document.getElementById('cacheOutput').textContent = 'Caches no disponible';
+      }
+    };
+  </script>
+</body>
+</html>
