@@ -5,8 +5,7 @@ const PRECACHE_URLS = [
   'style.css',
   'manifest.json',
   'icon-192.png',
-  'icon-512.png',
-  'logo.svg'
+  'icon-512.png'
 ];
 
 // Instalación: precache
@@ -62,4 +61,5 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
 
