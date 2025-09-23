@@ -1,12 +1,12 @@
 const CACHE_NAME = 'los-indestructibles-cache';
 const PRECACHE_URLS = [
   '/',
-  '/index.html',
-  '/css/style.css',
-  '/manifest.json',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
-  '/assets/logo.svg'
+  'index.html',
+  'style.css',
+  'manifest.json',
+  'icon-192.png',
+  'icon-512.png',
+  'logo.svg'
 ];
 
 // Instalación: precache
@@ -57,8 +57,9 @@ self.addEventListener('fetch', event => {
         });
       }).catch(() => {
         // fallback si todo falla (puedes usar offline.html si lo agregas al PRECACHE)
-        return caches.match('/index.html');
+        return caches.match('index.html');
       });
     })
   );
 });
+
