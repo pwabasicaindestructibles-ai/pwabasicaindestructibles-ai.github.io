@@ -1,7 +1,7 @@
 {
   "name": "Equipo 1 - Los Indestructibles",
   "short_name": "Los Indestructibles",
-  "start_url": "./",
+  "start_url": "./index.html",
   "display": "standalone",
   "scope": "/",
   "background_color": "#ffffff",
@@ -20,6 +20,7 @@
     }
   ]
 }
+
 
 
 
